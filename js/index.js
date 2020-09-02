@@ -29,11 +29,30 @@ const zoom = function(event){
 let scale = 1
 bus.onwheel = zoom;
 
+//header background color change 'click'
+
 const changeColor = document.querySelector('.main-navigation')
 changeColor.addEventListener('click', (event) => {
     event.target.style.backgroundColor = 'green'
 })
 
+//'keydown' Escape changes color to lets go paragraph
 
+const p1 =document.querySelector('.text-content')
 
+document.addEventListener('keydown', event => {
+    if(event.key === 'Escape') {
+        p1.style.color = 'red'
+    }
+})
 
+//'keydown' changes lets go paragraph back to black using 'a'
+
+// const p2 = document.querySelector('.content-destination')
+// const p3 = p2.querySelector('h2')
+
+document.addEventListener('keyup', event =>{
+    if(event.key === 'a'){
+        p1.style.color = 'black'
+    }
+})
