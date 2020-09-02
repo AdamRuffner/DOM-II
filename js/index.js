@@ -31,7 +31,7 @@ bus.onwheel = zoom;
 
 //header background color change 'click'
 
-const changeColor = document.querySelector('.main-navigation')
+const changeColor = document.querySelector('h1.logo-heading')
 changeColor.addEventListener('click', (event) => {
     event.target.style.backgroundColor = 'green'
 })
@@ -56,3 +56,28 @@ document.addEventListener('keyup', event =>{
         p1.style.color = 'black'
     }
 })
+
+//alert for when the oage is loaded
+
+// window.addEventListener('load', (event) => {
+//     alert('page is fully loaded')
+// })
+
+//focus on 'home' nav
+const nav = document.querySelector('.nav a')
+nav.addEventListener('focus', (event) => {
+    event.target.style.background = 'orange'
+} )
+
+//context menu event, doesn't allow you to right-click at footer copyright
+
+const noContext = document.querySelector('footer')
+noContext.addEventListener('contextmenu', event => {
+    event.preventDefault()
+})
+
+//blur on home nav when you click off it
+nav.addEventListener('blur', (event) => {
+    event.target.style.background = 'pink'
+} )
+
